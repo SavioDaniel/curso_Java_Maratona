@@ -1,4 +1,4 @@
-package Exercicios.Atividades;
+package Exercicios.Atividades_Poo;
 import java.util.Scanner;
 public class Cadastro {
     static void main() {
