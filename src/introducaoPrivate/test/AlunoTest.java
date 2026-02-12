@@ -8,7 +8,7 @@ public class AlunoTest {
         Aluno aluno = new Aluno();
         ImprimeAluno imprimeAluno = new ImprimeAluno();
         aluno.setNome("Sávio");
-        aluno.setIdade(-34);
+        aluno.setIdade(34);
         aluno.setSexo("Homem");
 
         imprimeAluno.print(aluno);
