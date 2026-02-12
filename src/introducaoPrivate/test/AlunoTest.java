@@ -8,6 +8,8 @@ public class AlunoTest {
         Aluno aluno = new Aluno();
         ImprimeAluno imprimeAluno = new ImprimeAluno();
         aluno.setNome("Sávio");
+        aluno.setIdade(24);
+        aluno.setSexo("Homem");
 
         imprimeAluno.print(aluno);
 
