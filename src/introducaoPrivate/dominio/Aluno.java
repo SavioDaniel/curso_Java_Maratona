@@ -38,4 +38,5 @@ public class Aluno {
     public String getSexo() {
         return sexo;
     }
+
 }
