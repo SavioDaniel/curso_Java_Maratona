@@ -16,7 +16,12 @@ public class Aluno {
     }
 
     public void setIdade(int idade){
-        this.idade = idade;
+        if (idade < 0) {
+            System.out.println("Idade invalida");
+            return;
+        }else {
+            this.idade = idade;
+        }
     }
 
     public void setSexo(String sexo) {
