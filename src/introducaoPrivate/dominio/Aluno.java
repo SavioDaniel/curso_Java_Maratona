@@ -17,8 +17,7 @@ public class Aluno {
 
     public void setIdade(int idade){
         if (idade < 0) {
-            System.out.println("Idade invalida");
-            return;
+            throw new IllegalArgumentException("Idade invalida");
         }else {
             this.idade = idade;
         }
