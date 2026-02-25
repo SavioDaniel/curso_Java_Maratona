@@ -1,5 +1,7 @@
 package introducaoPrivate.dominio;
 
+import java.util.Locale;
+
 public class Carro {
     private String modelo;
     private int ano;
@@ -14,15 +16,23 @@ public class Carro {
     }
 
     public void setModelo(String modelo){
-        this.modelo = modelo;
+        this.modelo = modelo.toUpperCase(Locale.ROOT);
     }
 
     public void setValor(double valor) {
-        this.valor = valor;
+        if (valor > 0){
+            this.valor = valor;
+        }else {
+            System.out.println("Valor errado");
+        }
     }
 
     public void setAno(int ano) {
-        this.ano = ano;
+        if (ano > 0) {
+            this.ano = ano;
+        }else {
+            System.out.println("Ano errado");
+        }
     }
 
     public String getModelo() {
