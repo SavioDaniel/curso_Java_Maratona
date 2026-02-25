@@ -27,9 +27,7 @@ public class CarroTest {
 
         //função que usa o get.
         System.out.println("______________________");
-        System.out.println(carro.getModelo());
-        System.out.println(carro.getAno());
-        System.out.println(carro.getValor());
+        System.out.println(carro);
 
     }
 }
