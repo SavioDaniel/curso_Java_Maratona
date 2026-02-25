@@ -46,4 +46,14 @@ public class Carro {
     public int getAno() {
         return ano;
     }
+
+    @Override
+    public String toString() {
+        return "---------Informações do Carro---------\n" +
+                "modelo = " + modelo + '\n' +
+                "ano = " + ano +
+                "\nvalor = " + valor +
+                ' ';
+    }
+    
 }
