@@ -3,7 +3,7 @@ package introducaoStatic.dominio;
 public class Carro {
     private String nome;
     private double velocidadeMaxima;
-    private double velocidadeLimite = 250;
+    private static double velocidadeLimite = 250;
 
     public void imprime(){
         System.out.println("------------------");
