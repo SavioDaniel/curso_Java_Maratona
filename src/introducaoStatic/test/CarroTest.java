@@ -1,4 +1,4 @@
-package introducaoStatic.test;
+/*package introducaoStatic.test;
 
 import introducaoStatic.dominio.Carro;
 
@@ -14,4 +14,4 @@ public class CarroTest {
         carro2.imprime();
         carro3.imprime();
     }
-}
+}*/
