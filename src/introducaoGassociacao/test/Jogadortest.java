@@ -8,9 +8,9 @@ public class Jogadortest {
         Jogador jogador2 = new Jogador("Romário");
         Jogador jogador3 = new Jogador("Gabigol");
         Jogador[] jogadores = new Jogador[]{jogador1, jogador2,jogador3};
-        
+
         for (Jogador jogador : jogadores) {
-            System.out.println(jogador);
+            jogador.imprime();
         }
 
     }
