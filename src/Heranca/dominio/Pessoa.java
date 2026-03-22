@@ -1,10 +1,10 @@
 package Heranca.dominio;
 
 public class Pessoa {
-    private String nome;
-    private String cpf;
-    private int idade;
-    private Endececo endececo;
+    protected String nome;
+    protected String cpf;
+    protected int idade;
+    protected Endececo endececo;
 
     public Pessoa(String nome, String cpf, int idade) {
         this.nome = nome;
