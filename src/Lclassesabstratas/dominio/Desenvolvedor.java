@@ -13,8 +13,8 @@ public class Desenvolvedor extends Funcionario {
     @Override
     public String toString() {
         return "Desenvolvedor" +
-                "\nnome = " + nome +
-                "\nsalario = " + salario
+                "  -  nome = " + nome +
+                "  -  salario = " + salario
                 ;
     }
 }
