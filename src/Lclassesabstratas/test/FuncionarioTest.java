@@ -7,10 +7,11 @@ import Lclassesabstratas.dominio.Gerente;
 public class FuncionarioTest {
     static void main(String[] args) {
         Gerente gerente1 = new Gerente("Nami", 7000);
-        Desenvolvedor desenvolvedor = new Desenvolvedor("Naruto", 12000);
+        Desenvolvedor desenvolvedor1 = new Desenvolvedor("Naruto", 12000);
 
+        gerente1.imprime();
         System.out.println(gerente1);
-        System.out.println("--------------------------");
-        System.out.println(desenvolvedor);
+        desenvolvedor1.imprime();
+        System.out.println(desenvolvedor1);
     }
 }
