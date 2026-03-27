@@ -14,8 +14,8 @@ public class Gerente extends Funcionario{
     @Override
     public String toString() {
         return "Gerente" +
-                "\nnome = " + nome +
-                "\nsalario = " + salario
+                "  -  nome = " + nome +
+                "  -  salario = " + salario
                 ;
     }
 }
