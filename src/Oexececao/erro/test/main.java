@@ -1,4 +1,4 @@
-package Oexececao.test;
+package Oexececao.erro.test;
 
 public class main {
     public static void main() {
