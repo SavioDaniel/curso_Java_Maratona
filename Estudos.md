@@ -76,17 +76,48 @@ ________________________________________________________________________________
 
 __________________________________________________________________________________________________________________________________________________________________________
 # FINALLY
-- O bloco `finally` é uma parte opcional de um bloco `try-catch` que é executada independentemente de uma exceção ter sido lançada ou não. Ele é usado para garantir que um código específico seja executado, como liberar recursos, fechar conexões ou realizar limpeza, mesmo que ocorra um erro durante a execução do bloco `try`.
-- O código dentro do bloco `finally` será executado após o bloco `try` e qualquer bloco `catch` correspondente, garantindo que as ações de limpeza ou liberação de recursos sejam realizadas, mesmo em casos de falha. Isso é especialmente importante para evitar vazamentos de recursos, como conexões de banco de dados ou arquivos abertos, que podem causar problemas de desempenho ou falhas no sistema se não forem tratados adequadamente.
+- O bloco `finally` garante a execução de um trecho de código, independentemente do que aconteça nos blocos `try` e `catch`.
+
+## 1. Fluxo de Execução
+* **Sem Erro:** `try` ➔ `finally`
+* **Com Erro:** `try` ➔ `catch` ➔ `finally`
+* **Com `return`:** O `finally` é executado **antes** de o método retornar o valor.
+
+
+
+## 2. Quando Usar?
+Usa-se para **libertar recursos externos** (fechar ficheiros, conexões de base de dados ou sockets de rede). Se não fechares estes recursos no `finally`, corres o risco de causar vazamento de memória (*resource leak*).
+
+## 3. Regra de Sintaxe
+O `try` não pode ficar sozinho. É obrigatório usar `try-catch`, `try-finally` ou `try-catch-finally`.
+
+---
+
+## 4. Código Exemplo
+
 ```java
-try {
-    // Código que pode lançar uma exceção
-} catch (TipoDeExceção e) {
-    // Código para lidar com a exceção
-} finally {
-    // Código que será executado independentemente de uma exceção ter sido lançada ou não
+public class ExemploFinally {
+    public static void main(String[] args) {
+        processarArquivo(false); // Fluxo Normal
+        processarArquivo(true);  // Fluxo com Erro
+    }
+
+    public static void processarArquivo(boolean gerarErro) {
+        try {
+            System.out.println("-> Abrindo arquivo...");
+            if (gerarErro) throw new RuntimeException("Erro de I/O!");
+            System.out.println("-> Processando dados...");
+        } catch (RuntimeException e) {
+            System.out.println("-> CATCH: Erro tratado: " + e.getMessage());
+        } finally {
+            System.out.println("-> FINALLY: Recurso fechado obrigatoriamente.");
+        }
+    }
 }
 ```
+
+### OBS
+- Quase nunca se vê o try-finally sem um catch, mas é possível. O importante é lembrar que o finally sempre será executado, mesmo que haja um return ou uma exceção não tratada no try. Isso torna o finally uma ferramenta poderosa para garantir a liberação de recursos, independentemente do resultado do bloco try.``
 ____________________________________________________________________________________________________________________________________________________________________________
 
 # Debug
