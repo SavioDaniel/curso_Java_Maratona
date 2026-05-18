@@ -120,6 +120,52 @@ public class ExemploFinally {
 - Quase nunca se vê o try-finally sem um catch, mas é possível. O importante é lembrar que o finally sempre será executado, mesmo que haja um return ou uma exceção não tratada no try. Isso torna o finally uma ferramenta poderosa para garantir a liberação de recursos, independentemente do resultado do bloco try.``
 ____________________________________________________________________________________________________________________________________________________________________________
 
+# Notas de Estudo: Capturando Múltiplas Exceções em Java
+
+Quando um bloco de código pode gerar diferentes tipos de erros, o Java permite empilhar vários blocos `catch` para tratar cada situação de forma específica.
+
+## 1. Como o Java Escolhe o `catch`?
+* O Java avalia os blocos `catch` de **cima para baixo**.
+* Apenas o **primeiro** bloco `catch` que for compatível com a exceção lançada será executado.
+* Assim que um `catch` é executado, todos os outros abaixo dele são ignorados.
+
+
+
+## 2. A Regra de Ouro da Ordem (Polimorfismo)
+As exceções devem ser organizadas das **Mais Específicas (Filhas)** para as **Mais Genéricas (Mães)**.
+
+* **Ordem Correta:** `NullPointerException` ➔ `RuntimeException` ➔ `Exception`.
+* **O que acontece se inverteres?** Se colocares `Exception` no topo, ela captura tudo por ser a classe mãe. O Java percebe que os `catch` de baixo nunca serão alcançados (*unreachable code*) e gera um **erro de compilação**.
+
+---
+
+## 3. Exemplo Prático
+
+```java
+public class MultiplasExcecoes {
+    public static void main(String[] args) {
+        try {
+            int[] numeros = {1, 2, 3};
+            // Cenário: Tentando aceder a um índice que não existe
+            System.out.println(numeros[10]); 
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // 1. O Java testa este primeiro. Como coincide perfeitamente, entra aqui!
+            System.out.println("Erro: Índice do array fora dos limites!");
+
+        } catch (RuntimeException e) {
+            // 2. Se fosse outro erro de lógica (como divisão por zero), cairia aqui.
+            System.out.println("Erro de Runtime genérico: " + e.getMessage());
+
+        } catch (Exception e) {
+            // 3. O último escudo para qualquer erro inesperado.
+            System.out.println("Erro crítico inesperado: " + e.getMessage());
+        }
+    }
+}
+```
+
+_____________________________________________________________________________________________________________________________________________________________________________
 # Debug
 - O processo de depuração (debug) é essencial para identificar e corrigir erros em um programa. Ele envolve a análise do código para entender o fluxo de execução e localizar pontos onde o comportamento do programa não é o esperado. Ferramentas de depuração, como breakpoints e inspeção de variáveis, permitem que os desenvolvedores examinem o estado do programa em tempo real, facilitando a identificação de bugs e a compreensão de como o código está funcionando. A depuração é       
 - uma habilidade crucial para qualquer programador, pois ajuda a garantir que o software seja confiável e funcione corretamente, além de melhorar a qualidade do código e a experiência do usuário.       
