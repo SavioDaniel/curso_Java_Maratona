@@ -37,3 +37,25 @@ public class Erros {
 }
 ```          
 - O código acima é um exemplo clássico de recursividade infinita, onde o método `recursividade()` chama a si mesmo sem uma condição de parada. Isso leva a um estouro de pilha (StackOverflowError) porque cada chamada ao método consome espaço na pilha de execução, e eventualmente a pilha se esgota.
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+# Aula 2 - Exceptions
+- Exceptions são condições anormais que ocorrem durante a execução de um programa, mas que podem ser tratadas e recuperadas. Elas indicam situações que o programa pode lidar, como erros de entrada, falhas de rede, ou problemas de lógica.
+- Exceptions são divididas em duas categorias principais: Checked Exceptions e Unchecked Exceptions.
+- Checked Exceptions são aquelas que o compilador exige que sejam tratadas ou declaradas. Elas geralmente representam condições que o programa pode prever e lidar, como IOException, SQLException, etc.
+- Unchecked Exceptions são aquelas que o compilador não exige que sejam tratadas ou declaradas. Elas geralmente representam erros de programação, como NullPointerException, ArrayIndexOutOfBoundsException, etc.             
+
+## RuntimeExceptions
+- RuntimeExceptions são um tipo específico de Unchecked Exceptions que ocorrem durante a execução do programa. Elas indicam erros de programação, como acesso a um índice fora dos limites de um array, tentativa de acessar um objeto nulo, ou divisão por zero.
+- Exemplo de RuntimeException: NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException.
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+# Aula 3 - Try, Catch 
+- Try tem o significado de tentar. ele é utilizado quando vamos mexer com um codigo que pode ser nocivo para o programa, ou seja, um código que pode lançar uma exception. O try é utilizado para envolver esse código perigoso, e caso ocorra uma exception, o programa não vai quebrar, ele vai pular para o catch.
+- Catch tem o significado de pegar. Ele é utilizado para pegar a exception que foi lançada no try, e tratar ela de alguma forma. O catch é utilizado para evitar que o programa quebre, e para dar uma resposta mais amigável para o usuário, ou para logar a exception de alguma forma.
+- Sempre se usa o try e o catch juntos, pois o try é utilizado para envolver o código perigoso, e o catch é utilizado para pegar a exception que foi lançada no try.
+- Por exemplo, se eu tiver um código que pode lançar uma NullPointerException, eu posso envolver esse código com um try, e pegar a NullPointerException com um catch, para evitar que o programa quebre.
+- Resumindo. o try vai rodar o codigo, se algum momento o JVM encontrar uma falha. ele pula direto para o bloco catch, para fazeer o tratamento do erro la dentro. E o catch é onde a gente vai tratar a exception, seja logando ela, ou dando uma resposta mais amigável para o usuário, ou até mesmo ignorando ela, dependendo do caso.
+- Pórem se o Try rodar o código e não encontrar nenhuma falha, ele vai pular o bloco catch, e continuar rodando o código normalmente. Ou seja, o catch só é executado se o try encontrar uma falha, caso contrário, ele é ignorado.
