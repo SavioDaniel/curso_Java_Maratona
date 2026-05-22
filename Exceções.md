@@ -68,3 +68,10 @@ ________________________________________________________________________________
 
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 # Aula 5 - Capturando múltiplas exceções
+- A regra se de usar varios catch seguidos gira em torno do conceito de árvore genealógica das classes em java.
+- Em java as exceções tem mãe, avós e filhas. Por exemplo.
+  - ArrayIndexOutOfBoundsException (Erro de índice de array) é filha de IndexOutOfBoundsException. 
+  - IndexOutOfBoundsException é filha de RuntimeException. 
+  - RuntimeException é filha de Exception.
+- Quando o Java entra em um bloco try e acontece um erro, ele começa a descer os catch procurando quem consegue abraçar aquele erro. O primeiro catch que servir, captura o erro, e o Java ignora o resto dos catches de baixo.
+- Ou seja existe uma pegadinha,você deve sempre colocar do menos especifico para o mais específico. Se você colocar um catch mais genérico antes de um catch mais específico, o catch mais genérico vai capturar a exceção, e o catch mais específico nunca vai ser alcançado, o que pode levar a um comportamento inesperado ou a uma perda de informações sobre a exceção.
