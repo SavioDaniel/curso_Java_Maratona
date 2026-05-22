@@ -59,3 +59,12 @@ ________________________________________________________________________________
 - Por exemplo, se eu tiver um código que pode lançar uma NullPointerException, eu posso envolver esse código com um try, e pegar a NullPointerException com um catch, para evitar que o programa quebre.
 - Resumindo. o try vai rodar o codigo, se algum momento o JVM encontrar uma falha. ele pula direto para o bloco catch, para fazeer o tratamento do erro la dentro. E o catch é onde a gente vai tratar a exception, seja logando ela, ou dando uma resposta mais amigável para o usuário, ou até mesmo ignorando ela, dependendo do caso.
 - Pórem se o Try rodar o código e não encontrar nenhuma falha, ele vai pular o bloco catch, e continuar rodando o código normalmente. Ou seja, o catch só é executado se o try encontrar uma falha, caso contrário, ele é ignorado.
+ 
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+# Aula 4 - Finally
+- O bloco finally é um bloco opcional que pode ser adicionado após o try e catch. Ele é utilizado para executar um código que deve ser executado independentemente de uma exception ter sido lançada ou não. O código dentro do bloco finally é garantido de ser executado, mesmo que uma exception seja lançada e não seja capturada, ou mesmo que o bloco try ou catch contenha uma instrução de retorno (return).
+- O bloco finally é útil para liberar recursos, como fechar arquivos, conexões de banco de dados, ou liberar memória, garantindo que esses recursos sejam liberados mesmo que ocorra uma exception. Ele é executado após o bloco try e catch, e antes de qualquer código que venha após o bloco try-catch-finally.
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+# Aula 5 - Capturando múltiplas exceções
