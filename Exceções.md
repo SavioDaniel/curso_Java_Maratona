@@ -23,8 +23,9 @@
 - Exemplo de erro: OutOfMemoryError, StackOverflowError, VirtualMachineError.
 
 ### Exemplo java.lang.StackOverflowError
+
 ```java
-package Oexerecao2.Errors;
+package OExcecoes2.Errors;
 
 public class Erros {
     static void main(String[] args) {
