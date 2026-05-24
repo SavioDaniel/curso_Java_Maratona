@@ -1,7 +1,7 @@
-package OExcecoes2.ExcecoeCustomizada.test;
+package OExcecoes2.ExcecoeCustomizada.Problema1.test;
 
-import OExcecoes2.ExcecoeCustomizada.dominio.EstoqueInsuficienteException;
-import OExcecoes2.ExcecoeCustomizada.dominio.Produto;
+import OExcecoes2.ExcecoeCustomizada.Problema1.dominio.EstoqueInsuficienteException;
+import OExcecoes2.ExcecoeCustomizada.Problema1.dominio.Produto;
 
 public class ProdutoTeste {
     // Adicionado o 'public' aqui para o IntelliJ rodar!

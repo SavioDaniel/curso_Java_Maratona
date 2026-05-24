@@ -1,4 +1,4 @@
-package OExcecoes2.ExcecoeCustomizada.dominio;
+package OExcecoes2.ExcecoeCustomizada.Problema1.dominio;
 
 public class Produto {
     private String nome;
