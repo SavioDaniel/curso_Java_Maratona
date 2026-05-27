@@ -10,9 +10,8 @@ public class WrapperTest01 {
         Double doublew = 3.1415;
         Character charw = 'A';
         Boolean booleanw = true;
+        System.out.println(Integer.compare(10, 20));
 
-        Integer int2 = Integer.compare(10, 10);
-        System.out.println(int2);
 
 
     }
