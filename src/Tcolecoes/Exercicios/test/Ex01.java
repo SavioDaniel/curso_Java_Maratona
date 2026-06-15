@@ -17,5 +17,11 @@ public class Ex01 {
             System.out.println(cor);
         }
 
+        cores.add(0, "Preto");
+        System.out.println("------------------");
+        for (String cor: cores) {
+            System.out.println(cor);
+        }
+
     }
 }
