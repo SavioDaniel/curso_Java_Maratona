@@ -13,5 +13,6 @@ public class EX01 {
         for (String fruta: frutas){
             System.out.println(fruta);
         }
+
     }
 }
